@@ -15,11 +15,11 @@ export default function AuthContainer() {
   return (
     <section className={styles.authContainer}>
       {type === 'signup' ? (
-        <Link to='/signin'>signin</Link>
+        <Link to='signin'>signin</Link>
       ) : (
-        <Link to='/signup'>signup</Link>
+        <Link to='signup'>signup</Link>
       )}
-
+      <Link></Link>
       {type === 'signup' ? (
         <AuthForm
           type={type}

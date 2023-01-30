@@ -7,6 +7,7 @@ const init = {
 };
 
 export default function useForm() {
+  console.log(123);
   const [authForm, setAuthForm] = useState({
     ...init,
   });

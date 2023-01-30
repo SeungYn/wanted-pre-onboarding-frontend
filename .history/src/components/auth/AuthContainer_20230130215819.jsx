@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useService } from '../../context/ServiceContext';
 import useForm from '../../hooks/useForm';
 import useAuth from '../../hooks/useAuth';
@@ -14,12 +14,6 @@ export default function AuthContainer() {
 
   return (
     <section className={styles.authContainer}>
-      {type === 'signup' ? (
-        <Link to='/signin'>signin</Link>
-      ) : (
-        <Link to='/signup'>signup</Link>
-      )}
-
       {type === 'signup' ? (
         <AuthForm
           type={type}

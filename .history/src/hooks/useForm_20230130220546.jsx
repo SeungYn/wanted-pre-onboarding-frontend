@@ -5,7 +5,7 @@ const init = {
   emailValidation: false,
   passwordValidation: false,
 };
-
+console.log(123);
 export default function useForm() {
   const [authForm, setAuthForm] = useState({
     ...init,
