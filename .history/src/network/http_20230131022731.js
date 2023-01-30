@@ -25,6 +25,7 @@ export class Http {
 
     try {
       const res = await this.#client(request);
+      console.log(res);
       return res.data;
     } catch (e) {
       if (e.response) {

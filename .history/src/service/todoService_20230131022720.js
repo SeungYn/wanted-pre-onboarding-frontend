@@ -39,7 +39,6 @@ export default class TodoService {
   async deleteTodo(id) {
     return await this.#http.fetch(`/todos/${id}`, {
       method: 'DELETE',
-      headers: this.getAuthorizationHeader(),
     });
   }
 

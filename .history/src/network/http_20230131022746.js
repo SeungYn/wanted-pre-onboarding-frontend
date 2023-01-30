@@ -25,8 +25,10 @@ export class Http {
 
     try {
       const res = await this.#client(request);
+      console.log(res);
       return res.data;
     } catch (e) {
+      console.log(e);
       if (e.response) {
         const message = e.response.data?.message;
         if (message) throw new Error(message);

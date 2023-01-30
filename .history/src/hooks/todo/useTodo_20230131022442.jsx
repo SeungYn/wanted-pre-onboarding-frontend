@@ -41,10 +41,8 @@ export default function useTodo(todoService) {
   const deleteTodo = useCallback(
     async (id) => {
       try {
-        await todoService.deleteTodo(id);
-        setTodos((todos) => todos.filter((todo) => todo.id !== id));
+        await todoService.deleteTodo('ff');
       } catch (err) {
-        console.log(err);
         alert(err);
       }
     },

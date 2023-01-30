@@ -44,7 +44,7 @@ export default function useTodo(todoService) {
         await todoService.deleteTodo(id);
         setTodos((todos) => todos.filter((todo) => todo.id !== id));
       } catch (err) {
-        console.log(err);
+        console.log(error);
         alert(err);
       }
     },
