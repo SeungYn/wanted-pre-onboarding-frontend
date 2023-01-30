@@ -13,7 +13,6 @@ export default function Todo({ item, onUpdate }) {
           type='checkbox'
           id={`check${id}`}
           onChange={() => onUpdate({ id, todo, isCompleted: !isCompleted })}
-          checked={isCompleted}
         />
         {!isModifyMode && <span>{todo}</span>}
       </label>
@@ -27,7 +26,7 @@ export default function Todo({ item, onUpdate }) {
       )}
       {isModifyMode && (
         <EditTodoForm
-          item={item}
+          todo={item}
           onUpdate={onUpdate}
           onClose={toggleModifyMode}
         />

@@ -27,7 +27,7 @@ export default function Todo({ item, onUpdate }) {
       )}
       {isModifyMode && (
         <EditTodoForm
-          item={item}
+          todo={item}
           onUpdate={onUpdate}
           onClose={toggleModifyMode}
         />

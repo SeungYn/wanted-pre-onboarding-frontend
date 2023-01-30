@@ -11,12 +11,12 @@ export default function TodosContainer() {
 
   useEffect(() => {
     getTodos();
-  }, [getTodos]);
+  }, [todoService]);
 
   return (
     <section>
       <NewTodoForm handleCreateTodo={createTodo} />
-      <Todos todos={todos} onUpdate={updateTodo} />
+      <Todos todos={todos} />
     </section>
   );
 }

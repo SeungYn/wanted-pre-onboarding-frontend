@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 
 export default function EditTodoForm({ item, onUpdate, onClose }) {
   const { id, todo, isCompleted } = item;
-  const [text, setText] = useState(todo);
+  const [text, setText] = useState(todo.todo);
   const onSubmit = (e) => {
     e.preventDefault();
-    onUpdate({ id, todo: text, isCompleted });
   };
 
   const onChange = (e) => {
     const { value } = e.target;
-    console.log(value);
     setText(value);
   };
 

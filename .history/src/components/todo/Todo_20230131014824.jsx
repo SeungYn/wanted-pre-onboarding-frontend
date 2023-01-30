@@ -2,19 +2,16 @@ import React from 'react';
 import useTodoModifyMode from '../../hooks/todo/useTodoModifyMode';
 import EditTodoForm from './EditTodoForm';
 
-export default function Todo({ item, onUpdate }) {
+export default function Todo({ item }) {
   const { isModifyMode, toggleModifyMode } = useTodoModifyMode();
   const { id, todo, isCompleted } = item;
 
+  const onCheck = () => {};
+
   return (
     <li>
-      <label htmlFor={`check${id}`}>
-        <input
-          type='checkbox'
-          id={`check${id}`}
-          onChange={() => onUpdate({ id, todo, isCompleted: !isCompleted })}
-          checked={isCompleted}
-        />
+      <label htmlFor='check'>
+        <input type='checkbox' name={'check'} />
         {!isModifyMode && <span>{todo}</span>}
       </label>
       {!isModifyMode && (
@@ -25,13 +22,7 @@ export default function Todo({ item, onUpdate }) {
           <button data-testid='delete-button'>삭제</button>
         </>
       )}
-      {isModifyMode && (
-        <EditTodoForm
-          item={item}
-          onUpdate={onUpdate}
-          onClose={toggleModifyMode}
-        />
-      )}
+      {isModifyMode && <EditTodoForm />}
     </li>
   );
 }

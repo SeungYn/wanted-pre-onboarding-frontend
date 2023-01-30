@@ -5,12 +5,11 @@ export default function EditTodoForm({ item, onUpdate, onClose }) {
   const [text, setText] = useState(todo);
   const onSubmit = (e) => {
     e.preventDefault();
-    onUpdate({ id, todo: text, isCompleted });
+    onUpdate({ id, text, isCompleted });
   };
 
   const onChange = (e) => {
     const { value } = e.target;
-    console.log(value);
     setText(value);
   };
 

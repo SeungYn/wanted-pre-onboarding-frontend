@@ -16,7 +16,7 @@ export default function TodosContainer() {
   return (
     <section>
       <NewTodoForm handleCreateTodo={createTodo} />
-      <Todos todos={todos} onUpdate={updateTodo} />
+      <Todos todos={todos} />
     </section>
   );
 }

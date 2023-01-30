@@ -28,6 +28,7 @@ export default function useTodo(todoService) {
     async ({ id, todo, isCompleted }) => {
       try {
         const res = await todoService.updateTodo(id, todo, isCompleted);
+        console.log(res);
         setTodos((todos) => {
           return todos.map((item) => (item.id === res.id ? res : item));
         });

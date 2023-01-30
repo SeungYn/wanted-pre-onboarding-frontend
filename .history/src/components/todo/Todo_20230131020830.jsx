@@ -13,7 +13,6 @@ export default function Todo({ item, onUpdate }) {
           type='checkbox'
           id={`check${id}`}
           onChange={() => onUpdate({ id, todo, isCompleted: !isCompleted })}
-          checked={isCompleted}
         />
         {!isModifyMode && <span>{todo}</span>}
       </label>
@@ -25,13 +24,7 @@ export default function Todo({ item, onUpdate }) {
           <button data-testid='delete-button'>삭제</button>
         </>
       )}
-      {isModifyMode && (
-        <EditTodoForm
-          item={item}
-          onUpdate={onUpdate}
-          onClose={toggleModifyMode}
-        />
-      )}
+      {isModifyMode && <EditTodoForm />}
     </li>
   );
 }
