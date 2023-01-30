@@ -8,11 +8,11 @@ const http = new Http('https://pre-onboarding-selection-task.shop');
 const tokenStorage = new TokenStorage();
 const authService = new AuthService(http);
 const todoService = new TodoService(http, tokenStorage);
-const ServiceContext = createContext({});
+const ServiceContext = createContext({ authService });
 
 export default function ServiceProvider({ children }) {
   return (
-    <ServiceContext.Provider value={{ authService, tokenStorage, todoService }}>
+    <ServiceContext.Provider value={{ authService, tokenStorage }}>
       {children}
     </ServiceContext.Provider>
   );

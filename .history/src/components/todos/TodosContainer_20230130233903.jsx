@@ -1,12 +1,9 @@
-import { useService } from '../../context/ServiceContext';
 import useTodo from '../../hooks/useTodo';
 import TodoInputBar from './TodoInputBar';
 import Todos from './Todos';
 
 export default function TodosContainer() {
-  const { todoService } = useService();
-
-  const { todos, createTodo } = useTodo(todoService);
+  const { todos, createTodo } = useTodo();
   return (
     <section>
       <TodoInputBar handleCreateTodo={createTodo} />

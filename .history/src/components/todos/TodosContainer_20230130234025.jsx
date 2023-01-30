@@ -4,9 +4,8 @@ import TodoInputBar from './TodoInputBar';
 import Todos from './Todos';
 
 export default function TodosContainer() {
-  const { todoService } = useService();
-
-  const { todos, createTodo } = useTodo(todoService);
+  const {} = useService();
+  const { todos, createTodo } = useTodo();
   return (
     <section>
       <TodoInputBar handleCreateTodo={createTodo} />

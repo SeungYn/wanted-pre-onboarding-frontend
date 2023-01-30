@@ -35,7 +35,7 @@ export default function AuthForm(props) {
       />
       <button
         className={styles.button}
-        data-testid={type === 'signup' ? 'signup-button' : 'signup-button'}
+        data-testid='signup-button'
         disabled={!authForm.emailValidation || !authForm.passwordValidation}
       >
         {type === 'signup' ? '회원가입' : '로그인'}

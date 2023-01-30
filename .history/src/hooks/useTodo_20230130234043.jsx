@@ -6,7 +6,6 @@ export default function useTodo(todoService) {
   const createTodo = async (todo) => {
     try {
       const res = await todoService.createTodo(todo);
-      console.log(res);
       setTodos((todos) => [...todos, res]);
     } catch (err) {
       alert(err);

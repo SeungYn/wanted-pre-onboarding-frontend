@@ -12,7 +12,7 @@ const ServiceContext = createContext({});
 
 export default function ServiceProvider({ children }) {
   return (
-    <ServiceContext.Provider value={{ authService, tokenStorage, todoService }}>
+    <ServiceContext.Provider value={{ authService, tokenStorage }}>
       {children}
     </ServiceContext.Provider>
   );

@@ -1,4 +1,4 @@
-export default class TodoService {
+class TodoService {
   #http;
   #tokenStorage;
   constructor(http, tokenStorage) {

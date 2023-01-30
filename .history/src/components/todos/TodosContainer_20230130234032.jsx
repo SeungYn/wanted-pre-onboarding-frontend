@@ -5,7 +5,6 @@ import Todos from './Todos';
 
 export default function TodosContainer() {
   const { todoService } = useService();
-
   const { todos, createTodo } = useTodo(todoService);
   return (
     <section>
