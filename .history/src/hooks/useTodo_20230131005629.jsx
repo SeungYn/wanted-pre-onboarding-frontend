@@ -14,6 +14,7 @@ export default function useTodo(todoService) {
   };
 
   const getTodos = async () => {
+    console.log(123);
     try {
       const res = await todoService.getTodos();
       setTodos((todos) => [...res]);
@@ -22,13 +23,11 @@ export default function useTodo(todoService) {
     }
   };
 
-  const updateTodo = async (id, todo, isCompleted) => {
+  const updateTodo = async ({ id, todo, isCompleted }) => {
     try {
       const res = await todoService.updateTodos(id, todo, isCompleted);
       setTodos((todos) => {
-        const index = todos.findIndex((item) => item.id === id);
-        todos.splice(index, 1, res);
-        return [...todos];
+        return todos.map((item) => (item.id === res.id ? res : item));
       });
     } catch (err) {
       alert(err);
