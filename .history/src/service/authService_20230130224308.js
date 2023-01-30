@@ -1,8 +1,9 @@
 export class AuthService {
   #http;
-
-  constructor(http) {
+  #tokenStorage;
+  constructor(http, tokenStorage) {
     this.#http = http;
+    this.#tokenStorage = tokenStorage;
   }
 
   async login({ email, password }) {
