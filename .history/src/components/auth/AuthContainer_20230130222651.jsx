@@ -9,7 +9,7 @@ export default function AuthContainer() {
   const location = useLocation();
   const type = location.pathname === '/signin' ? 'signin' : 'signup';
   const { authService, tokenStorage } = useService();
-  const { signIn, signUp } = useAuth(authService, tokenStorage);
+  const { signIn, signUp } = useAuth(authService);
   const { authForm, onChange, resetForm } = useForm();
 
   return (

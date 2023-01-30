@@ -6,8 +6,8 @@ export default function useAuth(authService, tokenStorage) {
     authService
       .login({ email, password })
       .then((data) => {
+        console.log(data);
         tokenStorage.saveToken(data.access_token);
-        location('/todo');
       })
       .catch((e) => alert(e.message));
   };

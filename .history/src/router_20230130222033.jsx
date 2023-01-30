@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import AuthPage from './pages/AuthPage';
-import RouterProtect from './pages/RouterProtect';
-import TodosPage from './pages/TodosPage';
+import AuthProtect from './pages/AuthProtect';
 
 export const router = createBrowserRouter([
   {
@@ -12,11 +11,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'todo',
-        element: (
-          <RouterProtect>
-            <TodosPage />
-          </RouterProtect>
-        ),
+        element: <AuthProtect>todo</AuthProtect>,
       },
       {
         path: 'signup',

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import AuthPage from './pages/AuthPage';
-import RouterProtect from './pages/RouterProtect';
+import AuthProtect from './pages/AuthProtect';
 import TodosPage from './pages/TodosPage';
 
 export const router = createBrowserRouter([
@@ -13,9 +13,9 @@ export const router = createBrowserRouter([
       {
         path: 'todo',
         element: (
-          <RouterProtect>
+          <AuthProtect>
             <TodosPage />
-          </RouterProtect>
+          </AuthProtect>
         ),
       },
       {
