@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useService } from '../../context/ServiceContext';
 import useTodo from '../../hooks/todo/useTodo';
-import NewTodoForm from './newTodoForm/NewTodoForm';
+import NewTodoForm from './NewTodoForm';
 import Todos from './Todos';
-import styles from './TodosGlobal.module.css';
+import styles from './TodosContainer.module.css';
 
 export default function TodosContainer() {
   const { todoService } = useService();
@@ -16,7 +16,7 @@ export default function TodosContainer() {
   }, [getTodos]);
 
   return (
-    <section className={styles.container}>
+    <section>
       <NewTodoForm handleCreateTodo={createTodo} />
       <Todos todos={todos} onUpdate={updateTodo} deleteTodo={deleteTodo} />
     </section>

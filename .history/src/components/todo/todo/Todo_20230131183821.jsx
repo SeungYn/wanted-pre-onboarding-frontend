@@ -1,14 +1,14 @@
-import React from 'react';
-import useTodoModifyMode from '../../hooks/todo/useTodoModifyMode';
-import EditTodoForm from './EditTodoForm';
+import useTodoModifyMode from '../../../hooks/todo/useTodoModifyMode';
+import EditTodoForm from '../EditTodoForm';
+import styles from './Todo.module.css';
 
 export default function Todo({ item, onUpdate, deleteTodo }) {
   const { isModifyMode, toggleModifyMode } = useTodoModifyMode();
   const { id, todo, isCompleted } = item;
 
   return (
-    <li>
-      <label htmlFor={`check${id}`}>
+    <li className={styles.todo}>
+      <label htmlFor={`check${id}`} className={styles.label}>
         <input
           type='checkbox'
           id={`check${id}`}
@@ -18,14 +18,14 @@ export default function Todo({ item, onUpdate, deleteTodo }) {
         {!isModifyMode && <span>{todo}</span>}
       </label>
       {!isModifyMode && (
-        <>
+        <div>
           <button onClick={toggleModifyMode} data-testid='modify-button'>
             수정
           </button>
           <button onClick={() => deleteTodo(id)} data-testid='delete-button'>
             삭제
           </button>
-        </>
+        </div>
       )}
       {isModifyMode && (
         <EditTodoForm
