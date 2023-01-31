@@ -17,7 +17,7 @@ export default function TodosContainer() {
 
   return (
     <section className={styles.container}>
-      <h1 className={styles.title}>투두 리스트</h1>
+      <h1>투두리스트</h1>
       <NewTodoForm handleCreateTodo={createTodo} />
       <Todos todos={todos} onUpdate={updateTodo} deleteTodo={deleteTodo} />
     </section>
