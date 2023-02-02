@@ -10,7 +10,7 @@ export default function AuthForm(props) {
 
   useEffect(() => {
     resetForm();
-  }, [type, resetForm]);
+  }, [type]);
 
   return (
     <form className={styles.form} onSubmit={onSubmit}>

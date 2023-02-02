@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 const init = {
   email: '',
   password: '',
@@ -33,8 +33,8 @@ export default function useForm() {
     }
   };
 
-  const resetForm = useCallback(() => {
+  const resetForm = () => {
     setAuthForm({ ...init });
-  }, []);
+  };
   return { authForm, onChange, resetForm };
 }

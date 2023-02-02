@@ -6,7 +6,7 @@ import TodoService from '../service/todoService';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const tokenStorage = new TokenStorage();
-const http = new Http(BASE_URL, tokenStorage);
+const http = new Http(BASE_URL, toeknStorage);
 const authService = new AuthService(http);
 const todoService = new TodoService(http, tokenStorage);
 const ServiceContext = createContext({});

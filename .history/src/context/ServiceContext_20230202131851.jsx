@@ -4,9 +4,9 @@ import { Http } from '../network/http';
 import { AuthService } from '../service/authService';
 import TodoService from '../service/todoService';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = 'https://pre-onboarding-selection-task.shop';
+const http = new Http(BASE_URL);
 const tokenStorage = new TokenStorage();
-const http = new Http(BASE_URL, tokenStorage);
 const authService = new AuthService(http);
 const todoService = new TodoService(http, tokenStorage);
 const ServiceContext = createContext({});
