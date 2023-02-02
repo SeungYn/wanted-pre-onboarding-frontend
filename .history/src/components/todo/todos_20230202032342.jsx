@@ -1,5 +1,3 @@
-import { useService } from '../../context/ServiceContext';
-import useTodo from '../../hooks/todo/useTodo';
 import Todo from './todo/Todo';
 
 export default function Todos({ todos, onUpdate, deleteTodo }) {

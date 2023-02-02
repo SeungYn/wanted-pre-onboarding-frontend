@@ -1,0 +1,25 @@
+.todo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem 0;
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  width: 100%;
+  flex-basis: 80%;
+  flex-grow: 0;
+}
+
+.labelEditMode {
+  width: auto;
+}
+
+.text {
+  width: 100%;
+  display: block;
+  margin-left: 0.4rem;
+  word-wrap: break-word;
+}
