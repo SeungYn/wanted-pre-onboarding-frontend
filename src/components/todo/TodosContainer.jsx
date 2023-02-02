@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useService } from '../../context/ServiceContext';
 import useTodo from '../../hooks/todo/useTodo';
 import NewTodoForm from './newTodoForm/NewTodoForm';
-import Todos from './Todos';
+import Todos from './todos/Todos';
 import styles from './TodosGlobal.module.css';
 
 export default function TodosContainer() {
