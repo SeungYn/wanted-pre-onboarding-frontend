@@ -7,11 +7,6 @@ export default function AuthForm(props) {
     e.preventDefault();
     if (!authForm.email || !authForm.password)
       return alert('아이디와 비밀번호를 올바르게 입력해주세요.');
-
-    if (!authForm.email.includes('@') || authForm.password.length < 8)
-      return alert(
-        '아이디는 이메일 형식 비밀번호는 8자리 이상으로 입력해주세요'
-      );
     handleSubmit({ email: authForm.email, password: authForm.password });
   };
 
